@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Synesqo Rive</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <p>Head Reveal</p>
+    <input 
+      id="headRevealSlider" 
+      type="range" 
+      min="0" 
+      max="100" 
+      value="0" 
+      oninput="setHeadReveal(this.value)" 
+    />
+    <br />
+    <canvas id="canvas" width="500" height="300"></canvas>
+
+    <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
