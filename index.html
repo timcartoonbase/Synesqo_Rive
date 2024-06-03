@@ -4,17 +4,36 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <p>Head Reveal</p>
-    <input 
-      id="headRevealSlider" 
-      type="range" 
-      min="0" 
-      max="100" 
-      value="0" 
-      oninput="setHeadReveal(this.value)" 
-    />
-    <br />
-    <canvas id="canvas" width="500" height="300"></canvas>
+    <div class="container">
+      <div>
+        <p>Icon 1</p>
+        <input id="headRevealSlider" type="range" min="0" max="100" value="0" oninput="setIcon1(this.value)" />
+        <p>Column 1</p>
+        <input id="headRevealSlider" type="range" min="0" max="100" value="0" oninput="setColumn1(this.value)" />
+      </div>
+      <div>
+        <p>Icon 2</p>
+        <input id="headRevealSlider" type="range" min="0" max="100" value="0" oninput="setIcon1(this.value)" />
+        <p>Column 2</p>
+        <input id="headRevealSlider" type="range" min="0" max="100" value="0" oninput="setColumn1(this.value)" />
+      </div>
+      <div>
+        <p>Icon 3</p>
+        <input id="headRevealSlider" type="range" min="0" max="100" value="0" oninput="setIcon1(this.value)" />
+        <p>Column 3</p>
+        <input id="headRevealSlider" type="range" min="0" max="100" value="0" oninput="setColumn1(this.value)" />
+      </div>
+      <div>
+        <p>Icon 4</p>
+        <input id="headRevealSlider" type="range" min="0" max="100" value="0" oninput="setIcon1(this.value)" />
+        <p>Column 4</p>
+        <input id="headRevealSlider" type="range" min="0" max="100" value="0" oninput="setColumn1(this.value)" />
+      </div>
+    </div>
+
+    <div class="container">
+      <canvas id="canvas" width="500" height="300"></canvas>
+    </div>
 
     <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
     <script src="index.js"></script>
