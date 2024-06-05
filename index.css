@@ -17,3 +17,9 @@ p {
   width: 60%; 
   margin: auto;
 }
+
+.slider {
+  accent-color: #CC3B23;
+  background-color: #888;
+  width: 80%;
+}
