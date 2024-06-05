@@ -1,6 +1,6 @@
 
 const r = new rive.Rive({
-    src: "./assets/synesqo_240603.riv",
+    src: "./assets/synesqo_v2.riv",
     canvas: document.getElementById("canvas"),
     autoplay: true,
     stateMachines: "State Machine 1",

@@ -1,12 +1,19 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#F9F5F0, #FFFFFF);
 }
 
 p {
-    padding-top: 25px;
+    padding-top: 15px;
+    font-size: 0.8rem;
 }
 
 .container {
   display: flex;
   justify-content: space-evenly;
+}
+
+.sliders { 
+  width: 60%; 
+  margin: auto;
 }
