@@ -63,18 +63,63 @@ const setColumn4 = (n) => {
 
 // Get Events
 const eventFire = (riveEvent) => {
-  console.log(riveEvent.data);
-	const eventData = riveEvent.data;
-	const eventProperties = eventData.properties;
-  console.log(eventProperties);
+  const eventData = riveEvent.data;
+	const eventName = eventData.name;
+  // console.log(eventData);
 
-	// const eventData = riveEvent.data;
-	// const eventName = eventData.name;
-	// const eventProperties = eventData.properties;
+  switch (riveEvent.data.name) {
+    case "icon1In":
+      console.log("icon 1 in");
+      break;
+    case "icon1Out":
+      console.log("icon 1 out");
+      break;
+    case "icon2In":
+      console.log("icon 2 in");
+      break;
+    case "icon2Out":
+      console.log("icon 2 out");
+      break;
+    case "icon3In":
+      console.log("icon 3 in");
+      break;
+    case "icon3Out":
+      console.log("icon 3 out");
+      break;
+    case "icon4In":
+      console.log("icon 4 in");
+      break;
+    case "icon4Out":
+      console.log("icon 4 out");
+      break;
+    case "col1In":
+      console.log("col 1 in");
+      break;
+    case "col1Out":
+      console.log("col 1 out");
+      break;
+    case "col2In":
+      console.log("col 2 in");
+      break;
+    case "col2Out":
+      console.log("col 2 out");
+      break;
+    case "col3In":
+      console.log("col 3 in");
+      break;
+    case "col3Out":
+      console.log("col 3 out");
+      break;
+    case "col4In":
+      console.log("col 4 in");
+      break;
+    case "col4Out":
+      console.log("col 4 out");
+      break;
 
-	// Event logger
-	// console.log("event name:", eventName);
-	// console.log("event properties:", eventProperties);
+    default :
+      console.log(eventName);
+    } 
 };
 
 r.on(rive.EventType.RiveEvent, eventFire);
