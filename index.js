@@ -4,6 +4,7 @@ const r = new rive.Rive({
     canvas: document.getElementById("canvas"),
     autoplay: true,
     stateMachines: "State Machine 1",
+    automaticallyHandleEvents: true, // Automatically handle RiveHTTPEvents
     onLoad: () => {
       r.resizeDrawingSurfaceToCanvas();
       // Get the inputs via the name of the state machine
@@ -59,3 +60,16 @@ const setColumn4 = (n) => {
     column4.value = n;
     columnText1.value = r.setTextRunValue("columnText4", `${n}%`);
 }
+
+// Get Events
+const eventFire = (riveEvent) => {
+	const eventData = riveEvent.data;
+	const eventName = eventData.name;
+	const eventProperties = eventData.properties;
+
+	// Event logger
+	console.log("event name:", eventName);
+	console.log("event properties:", eventProperties);
+};
+
+r.on(rive.EventType.RiveEvent, eventFire);
