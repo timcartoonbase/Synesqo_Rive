@@ -1,6 +1,6 @@
 
 const r = new rive.Rive({
-    src: "./assets/synesqo_v2.riv",
+    src: "./assets/synesqo_v3.riv",
     canvas: document.getElementById("canvas"),
     autoplay: true,
     stateMachines: "State Machine 1",
@@ -63,13 +63,18 @@ const setColumn4 = (n) => {
 
 // Get Events
 const eventFire = (riveEvent) => {
+  console.log(riveEvent.data);
 	const eventData = riveEvent.data;
-	const eventName = eventData.name;
 	const eventProperties = eventData.properties;
+  console.log(eventProperties);
+
+	// const eventData = riveEvent.data;
+	// const eventName = eventData.name;
+	// const eventProperties = eventData.properties;
 
 	// Event logger
-	console.log("event name:", eventName);
-	console.log("event properties:", eventProperties);
+	// console.log("event name:", eventName);
+	// console.log("event properties:", eventProperties);
 };
 
 r.on(rive.EventType.RiveEvent, eventFire);
