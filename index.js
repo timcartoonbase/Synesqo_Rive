@@ -37,8 +37,8 @@ const col1 = new rive.Rive({
   automaticallyHandleEvents: true, 
   onLoad: () => {
     const inputs = col1.stateMachineInputs('State Machine 1');
-    icon1Mobile = inputs.find(i => i.name === 'icon1');
-    column1Mobile = inputs.find(i => i.name === 'column1');
+    icon1Mobile = inputs.find(i => i.name === 'icon');
+    column1Mobile = inputs.find(i => i.name === 'column');
     columnText1Mobile = col1.getTextRunValue("columnText1");
     col1.setTextRunValue("columnText1", "0%");
   },
@@ -52,8 +52,8 @@ const col2 = new rive.Rive({
   automaticallyHandleEvents: true, 
   onLoad: () => {
     const inputs = col2.stateMachineInputs('State Machine 1');
-    icon2Mobile = inputs.find(i => i.name === 'icon2');
-    column2Mobile = inputs.find(i => i.name === 'column2');
+    icon2Mobile = inputs.find(i => i.name === 'icon');
+    column2Mobile = inputs.find(i => i.name === 'column');
 
     columnText2Mobile = col2.getTextRunValue("columnText2");
     col2.setTextRunValue("columnText2", "0%");
@@ -68,8 +68,8 @@ const col3 = new rive.Rive({
   automaticallyHandleEvents: true, 
   onLoad: () => {
     const inputs = col3.stateMachineInputs('State Machine 1');
-    icon3Mobile = inputs.find(i => i.name === 'icon3');
-    column3Mobile = inputs.find(i => i.name === 'column3');
+    icon3Mobile = inputs.find(i => i.name === 'icon');
+    column3Mobile = inputs.find(i => i.name === 'column');
     columnText3Mobile = col3.getTextRunValue("columnText3");
     col3.setTextRunValue("columnText3", "0%");
   },
@@ -83,8 +83,8 @@ const col4 = new rive.Rive({
   automaticallyHandleEvents: true, 
   onLoad: () => {
     const inputs = col4.stateMachineInputs('State Machine 1');
-    icon4Mobile = inputs.find(i => i.name === 'icon4');
-    column4Mobile = inputs.find(i => i.name === 'column4');
+    icon4Mobile = inputs.find(i => i.name === 'icon');
+    column4Mobile = inputs.find(i => i.name === 'column');
     columnText4Mobile = col4.getTextRunValue("columnText4");
     col4.setTextRunValue("columnText4", "0%");
   },
