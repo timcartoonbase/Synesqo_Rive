@@ -39,8 +39,8 @@ const col1 = new rive.Rive({
     const inputs = col1.stateMachineInputs('State Machine 1');
     icon1Mobile = inputs.find(i => i.name === 'icon');
     column1Mobile = inputs.find(i => i.name === 'column');
-    columnText1Mobile = col1.getTextRunValue("columnText1");
-    col1.setTextRunValue("columnText1", "0%");
+    columnText1Mobile = col1.getTextRunValue("columnText");
+    col1.setTextRunValue("columnText", "0%");
   },
 });
 
@@ -55,8 +55,8 @@ const col2 = new rive.Rive({
     icon2Mobile = inputs.find(i => i.name === 'icon');
     column2Mobile = inputs.find(i => i.name === 'column');
 
-    columnText2Mobile = col2.getTextRunValue("columnText2");
-    col2.setTextRunValue("columnText2", "0%");
+    columnText2Mobile = col2.getTextRunValue("columnText");
+    col2.setTextRunValue("columnText", "0%");
   },
 });
 
@@ -70,8 +70,8 @@ const col3 = new rive.Rive({
     const inputs = col3.stateMachineInputs('State Machine 1');
     icon3Mobile = inputs.find(i => i.name === 'icon');
     column3Mobile = inputs.find(i => i.name === 'column');
-    columnText3Mobile = col3.getTextRunValue("columnText3");
-    col3.setTextRunValue("columnText3", "0%");
+    columnText3Mobile = col3.getTextRunValue("columnText");
+    col3.setTextRunValue("columnText", "0%");
   },
 });
 
@@ -85,8 +85,8 @@ const col4 = new rive.Rive({
     const inputs = col4.stateMachineInputs('State Machine 1');
     icon4Mobile = inputs.find(i => i.name === 'icon');
     column4Mobile = inputs.find(i => i.name === 'column');
-    columnText4Mobile = col4.getTextRunValue("columnText4");
-    col4.setTextRunValue("columnText4", "0%");
+    columnText4Mobile = col4.getTextRunValue("columnText");
+    col4.setTextRunValue("columnText", "0%");
   },
 });
 
@@ -98,7 +98,7 @@ const setColumn1 = (n) => {
   column1.value = n;
   columnText1.value = r.setTextRunValue("columnText1", `${n}%`);
   column1Mobile.value = n;
-  columnText1Mobile.value = col1.setTextRunValue("columnText1", `${n}%`);
+  columnText1Mobile.value = col1.setTextRunValue("columnText", `${n}%`);
 }
 
 const setIcon2 = (n) => {
@@ -109,7 +109,7 @@ const setColumn2 = (n) => {
   column2.value = n;
   columnText2.value = r.setTextRunValue("columnText2", `${n}%`);
   column2Mobile.value = n;
-  columnText2Mobile.value = col2.setTextRunValue("columnText2", `${n}%`);
+  columnText2Mobile.value = col2.setTextRunValue("columnText", `${n}%`);
 }
 
 const setIcon3 = (n) => {
@@ -120,7 +120,7 @@ const setColumn3 = (n) => {
   column3.value = n;
   columnText3.value = r.setTextRunValue("columnText3", `${n}%`);
   column3Mobile.value = n;
-  columnText3Mobile.value = col3.setTextRunValue("columnText3", `${n}%`);
+  columnText3Mobile.value = col3.setTextRunValue("columnText", `${n}%`);
 }
 
 const setIcon4 = (n) => {
@@ -131,7 +131,7 @@ const setColumn4 = (n) => {
   column4.value = n;
   columnText4.value = r.setTextRunValue("columnText4", `${n}%`);
   column4Mobile.value = n;
-  columnText4Mobile.value = col4.setTextRunValue("columnText4", `${n}%`);
+  columnText4Mobile.value = col4.setTextRunValue("columnText", `${n}%`);
 }
 
 // Get Events
