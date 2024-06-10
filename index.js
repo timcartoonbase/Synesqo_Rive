@@ -6,7 +6,7 @@ const r = new rive.Rive({
     stateMachines: "State Machine 1",
     automaticallyHandleEvents: true, // Automatically handle RiveHTTPEvents
     onLoad: () => {
-      r.resizeDrawingSurfaceToCanvas();
+      // r.resizeDrawingSurfaceToCanvas();
       // Get the inputs via the name of the state machine
       const inputs = r.stateMachineInputs('State Machine 1');
       icon1 = inputs.find(i => i.name === 'icon1');
@@ -20,52 +20,124 @@ const r = new rive.Rive({
 
       columnText1 = r.getTextRunValue("columnText1");
       r.setTextRunValue("columnText1", "0%");
-      columnText1 = r.getTextRunValue("columnText2");
+      columnText2 = r.getTextRunValue("columnText2");
       r.setTextRunValue("columnText2", "0%");
-      columnText1 = r.getTextRunValue("columnText3");
+      columnText3 = r.getTextRunValue("columnText3");
       r.setTextRunValue("columnText3", "0%");
-      columnText1 = r.getTextRunValue("columnText4");
+      columnText4 = r.getTextRunValue("columnText4");
       r.setTextRunValue("columnText4", "0%");
     },
 });
 
+const col1 = new rive.Rive({
+  src: "./assets/column_1.riv",
+  canvas: document.getElementById("col1"),
+  autoplay: true,
+  stateMachines: "State Machine 1",
+  automaticallyHandleEvents: true, 
+  onLoad: () => {
+    const inputs = col1.stateMachineInputs('State Machine 1');
+    icon1Mobile = inputs.find(i => i.name === 'icon1');
+    column1Mobile = inputs.find(i => i.name === 'column1');
+    columnText1Mobile = col1.getTextRunValue("columnText1");
+    col1.setTextRunValue("columnText1", "0%");
+  },
+});
+
+const col2 = new rive.Rive({
+  src: "./assets/column_2.riv",
+  canvas: document.getElementById("col2"),
+  autoplay: true,
+  stateMachines: "State Machine 1",
+  automaticallyHandleEvents: true, 
+  onLoad: () => {
+    const inputs = col2.stateMachineInputs('State Machine 1');
+    icon2Mobile = inputs.find(i => i.name === 'icon2');
+    column2Mobile = inputs.find(i => i.name === 'column2');
+
+    columnText2Mobile = col2.getTextRunValue("columnText2");
+    col2.setTextRunValue("columnText2", "0%");
+  },
+});
+
+const col3 = new rive.Rive({
+  src: "./assets/column_3.riv",
+  canvas: document.getElementById("col3"),
+  autoplay: true,
+  stateMachines: "State Machine 1",
+  automaticallyHandleEvents: true, 
+  onLoad: () => {
+    const inputs = col3.stateMachineInputs('State Machine 1');
+    icon3Mobile = inputs.find(i => i.name === 'icon3');
+    column3Mobile = inputs.find(i => i.name === 'column3');
+    columnText3Mobile = col3.getTextRunValue("columnText3");
+    col3.setTextRunValue("columnText3", "0%");
+  },
+});
+
+const col4 = new rive.Rive({
+  src: "./assets/column_4.riv",
+  canvas: document.getElementById("col4"),
+  autoplay: true,
+  stateMachines: "State Machine 1",
+  automaticallyHandleEvents: true, 
+  onLoad: () => {
+    const inputs = col4.stateMachineInputs('State Machine 1');
+    icon4Mobile = inputs.find(i => i.name === 'icon4');
+    column4Mobile = inputs.find(i => i.name === 'column4');
+    columnText4Mobile = col4.getTextRunValue("columnText4");
+    col4.setTextRunValue("columnText4", "0%");
+  },
+});
+
 const setIcon1 = (n) => {
   icon1.value = n;
+  icon1Mobile.value = n;
 }
 const setColumn1 = (n) => {
-    column1.value = n;
-    columnText1.value = r.setTextRunValue("columnText1", `${n}%`);
+  column1.value = n;
+  columnText1.value = r.setTextRunValue("columnText1", `${n}%`);
+  column1Mobile.value = n;
+  columnText1Mobile.value = col1.setTextRunValue("columnText1", `${n}%`);
 }
 
 const setIcon2 = (n) => {
   icon2.value = n;
+  icon2Mobile.value = n;
 }
 const setColumn2 = (n) => {
-    column2.value = n;
-    columnText1.value = r.setTextRunValue("columnText2", `${n}%`);
+  column2.value = n;
+  columnText2.value = r.setTextRunValue("columnText2", `${n}%`);
+  column2Mobile.value = n;
+  columnText2Mobile.value = col2.setTextRunValue("columnText2", `${n}%`);
 }
 
 const setIcon3 = (n) => {
   icon3.value = n;
+  icon3Mobile.value = n;
 }
 const setColumn3 = (n) => {
-    column3.value = n;
-    columnText1.value = r.setTextRunValue("columnText3", `${n}%`);
+  column3.value = n;
+  columnText3.value = r.setTextRunValue("columnText3", `${n}%`);
+  column3Mobile.value = n;
+  columnText3Mobile.value = col3.setTextRunValue("columnText3", `${n}%`);
 }
 
 const setIcon4 = (n) => {
   icon4.value = n;
+  icon4Mobile.value = n;
 }
 const setColumn4 = (n) => {
-    column4.value = n;
-    columnText1.value = r.setTextRunValue("columnText4", `${n}%`);
+  column4.value = n;
+  columnText4.value = r.setTextRunValue("columnText4", `${n}%`);
+  column4Mobile.value = n;
+  columnText4Mobile.value = col4.setTextRunValue("columnText4", `${n}%`);
 }
 
 // Get Events
 const eventFire = (riveEvent) => {
   const eventData = riveEvent.data;
 	const eventName = eventData.name;
-  // console.log(eventData);
 
   switch (riveEvent.data.name) {
     case "icon1In":
@@ -123,3 +195,9 @@ const eventFire = (riveEvent) => {
 };
 
 r.on(rive.EventType.RiveEvent, eventFire);
+
+// Resize the drawing surface if the window resizes
+window.addEventListener(
+	"resize",
+	() => { r.resizeDrawingSurfaceToCanvas(); }, false
+);

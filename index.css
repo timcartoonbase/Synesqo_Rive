@@ -3,6 +3,12 @@ body {
     background-image: linear-gradient(#F9F5F0, #FFFFFF);
 }
 
+h3 {
+  color: #CC3B23;
+  text-align: center;
+  padding-top: 50px;
+}
+
 p {
     padding-top: 15px;
     font-size: 0.8rem;
@@ -14,8 +20,10 @@ p {
 }
 
 .sliders { 
-  width: 60%; 
+  width: 10%;
+  flex-direction: column;
   margin: auto;
+  position: fixed;
 }
 
 .slider {
